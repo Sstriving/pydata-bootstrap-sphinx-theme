@@ -23,7 +23,7 @@ from numpydoc.docscrape_sphinx import SphinxDocString
 
 logger = logging.getLogger(__name__)
 
-import pandas_sphinx_theme
+import pandas_sphinx_theme_brain_plus
 
 
 # -----------------------------------------------------------------------------
@@ -363,7 +363,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  Major themes that come with
 # Sphinx are currently 'default' and 'sphinxdoc'.
-html_theme = 'pandas_sphinx_theme'
+html_theme = 'pandas_sphinx_theme_brain_plus'
 
 # The style sheet to use for HTML and HTML Help pages. A file of that name
 # must exist either in Sphinx' static/ path, or in one of the custom paths

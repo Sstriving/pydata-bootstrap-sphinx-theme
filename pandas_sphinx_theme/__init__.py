@@ -121,6 +121,6 @@ def get_html_theme_path():
 
 def setup(app):
     theme_path = get_html_theme_path()[0]
-    app.add_html_theme("pandas_sphinx_theme", theme_path)
+    app.add_html_theme("pandas_sphinx_theme_brain_plus", theme_path)
     app.set_translator("html", BootstrapHTML5Translator)
     app.connect("html-page-context", setup_edit_url)

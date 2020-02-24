@@ -22,4 +22,4 @@ configuration option:
 
 .. code:: python
 
-    html_theme = "pandas_sphinx_theme"
+    html_theme = "pandas_sphinx_theme_brain_plus"
