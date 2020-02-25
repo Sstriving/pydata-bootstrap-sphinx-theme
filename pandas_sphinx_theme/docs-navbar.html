@@ -4,14 +4,24 @@
   <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="logo">
 </a>
 {% endif %}
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-</button>
+</button> -->
+<div class="version-switch">
+  <label for="">版本号选择 :
+    <!-- <img src="./_static/select.png" alt=""> -->
+  </label>
+  <select name="版本号选择" id="">
+    <option value="1.0">1.0</option>
+    <option value="1.1">1.1</option>
+
+  </select>
+</div>
 
 <div id="navbar-menu" class="collapse navbar-collapse">
   <ul id="navbar-main-elements" class="navbar-nav mr-auto">
     <li class="nav-item">
-        <a class="nav-link" href="{{ pathto('index') }}">Home</a>
+        <a class="nav-link active" href="{{ pathto('index') }}">Home</a>
     </li>
     {% set nav = get_nav_object(maxdepth=1) %}
     {% for main_nav_item in nav %}
