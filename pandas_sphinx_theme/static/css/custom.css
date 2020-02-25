@@ -41,7 +41,7 @@ color: #0166FF !important;
 
 .navbar {
 padding: 16px 80px;
-height: 96px;
+height: 96px !important;
 display: block;
 }
 .bd-search {
@@ -182,10 +182,16 @@ border: none;
 }
 
 .bd-content {
-  padding-top: 40px !important;
+  padding-top: 0px !important;
   padding-left: 40px !important;
   flex:50%;
 }
+
+.std-ref {
+  color: #0166FF !important;
+  text-decoration: underline !important;
+}
+
 @media (min-width: 768px) {
   @supports ((position: -webkit-sticky) or (position: sticky)) {
     .bd-links {
@@ -406,6 +412,7 @@ h1,h2 {
   font-size: 28px;
   font-weight:500;
   color:rgba(0,17,58,1);
+  line-height:40px;
 }
 ol,ul {
   padding-inline-start: 15px;
@@ -417,13 +424,9 @@ dd ul,ol {
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   color:rgba(76,88,117,1);
   line-height:22px;
-}
-
-.navbar {
-  height: 4.8rem;
 }
 
 blockquote {
@@ -449,10 +452,14 @@ a:hover {
 }
 .section {
   width: 800px;
+  margin-top: 32px;
 }
 .footer {
     height:424px;
     background:rgba(247,249,252,1);
     border-radius:4px;
+}
+code {
+  color:#FF7D4B;
 }
   
