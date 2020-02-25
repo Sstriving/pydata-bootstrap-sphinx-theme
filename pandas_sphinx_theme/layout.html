@@ -17,6 +17,8 @@
 
     {{- css() }}
     <link href="{{ pathto('_static/css/custom.css', 1) }}" rel="stylesheet">
+    <link href="{{ pathto('_static/css/mytheme.css', 1) }}" rel="stylesheet">
+
 {%- endblock %}
 
 {%- block extrahead %}
@@ -58,6 +60,7 @@
             </div>
 
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <a href="#top" style="display: none;" title="永久链接至标题">¶</a>
               <div>
                 {% block body %} {% endblock %}
               </div>
