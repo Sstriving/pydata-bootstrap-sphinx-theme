@@ -56,7 +56,9 @@ display: block;
   background-position: center;
   background-size: 100%;
 }
-
+.bd-search-margin-top {
+  margin-top:64px;
+}
 .bd-search .tips {
 font-size: 25px;
 font-weight: 500;
@@ -85,6 +87,7 @@ border: none;
 }
 .fixed-top {
 /* top: 280px; */
+top:63px;
 }
 
 /* minimal copy paste from bootstrap docs css to get sidebars working */
@@ -462,4 +465,162 @@ a:hover {
 code {
   color:#FF7D4B;
 }
-  
+
+
+.highlight pre {
+  background-color: #F6F9FC;
+}
+.highlight .k {
+  color:#0EBC77;
+}
+.highlight .kn {
+  color:#0EBC77;
+}
+.highlight .nn {
+  color:#0166FF;
+}
+.highlight .c1 {
+  color:#1569c9;
+}
+
+/* header头部的样式 */
+
+.head-cont[data-v-1aeaed3d] {
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  padding:0 80px;
+  font-size:14px;
+  z-index:10000;
+}
+.head-reverse-color {
+  position: fixed;
+  top:0;
+  background-color:#0166FF;
+}
+.head-reverse-color a {
+  color:#FFFFFF;
+  opacity: 0.7;
+}
+.head-cont .logo[data-v-1aeaed3d] {
+  width: 111px;
+  float: left;
+}
+.head-cont .logo img[data-v-1aeaed3d] {
+  width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+.head-cont a {
+  color: #00113A;
+  text-decoration: none;
+}
+.head-reverse-color a {
+  color:#FFFFFF;
+}
+.head-cont ul, ol {
+  list-style: none;
+  margin-bottom:0;
+  padding:0;
+}
+.head-cont .menu-cont[data-v-1aeaed3d] {
+  float: left;
+  height: 64px;
+  margin-left: 82px;
+  margin-bottom: 0;
+}
+.head-cont .menu-cont li[data-v-1aeaed3d] {
+  float: left;
+  padding-left:15px;
+  padding-right:15px;
+  position: relative;
+}
+.head-cont .menu-cont li[data-v-1aeaed3d]:first-child {
+  padding-left:0;
+}
+.head-cont .menu-cont .active[data-v-1aeaed3d] {
+  color: #0166FF;
+  border-bottom: 2px solid #0166FF;
+}
+.head-reverse-color .menu-cont .active[data-v-1aeaed3d] {
+  color:#FFFFFF;
+  opacity: 1;
+  border-bottom: 2px solid #FFFFFF;
+}
+.head-cont .menu-cont li a[data-v-1aeaed3d] {
+  padding: 0 2px;
+  display: inline-block;
+  line-height: 24px;
+  font-weight: 500;
+}
+.head-cont .menu-cont li a[data-v-1aeaed3d]:hover {
+  color: #0166FF;
+  border-bottom: 2px solid #0166FF;
+  cursor: pointer;
+
+}
+.head-cont .menu-cont .drop-li:hover .menu-drop{
+  display:block;
+}
+
+.head-cont .right-title[data-v-1aeaed3d] {
+  float: right;
+}
+.head-cont .right-title li[data-v-1aeaed3d] {
+  float: left;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.head-cont .right-title .mid-line[data-v-1aeaed3d] {
+  width: 1px;
+  height: 22px;
+  margin-top: 21px;
+  background-color: #CCCFD8;
+  cursor: default;
+}
+.head-cont .right-title li[data-v-1aeaed3d]:last-child {
+  margin-right: 0;
+}
+.head-cont .menu-cont li .menu-drop[data-v-1aeaed3d] {
+  position: absolute;
+  width: 132px;
+  display: none;
+  background: white;
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  border: 1px solid #e0e3ee;
+}
+.head-cont .menu-cont li .menu-drop .drop-list[data-v-1aeaed3d] {
+  border-bottom: 1px #e0e3ee solid;
+  padding-left: 16px;
+  padding-bottom: 15px;
+}
+.head-cont .menu-cont li .menu-drop .name[data-v-1aeaed3d] {
+  font-size: 16px;
+  font-weight: 500;
+  color: #00113a;
+  line-height: 22px;
+  margin-top: 16px;
+}
+.head-cont .menu-cont li .menu-drop .url[data-v-1aeaed3d] {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  padding-left: 4px;
+}
+.head-cont .menu-cont li .menu-drop .url[data-v-1aeaed3d] a {
+  color: #4c5875;
+  text-decoration: none;
+
+}
+.head-cont .menu-cont li .menu-drop .url[data-v-1aeaed3d] a:hover {
+  color: #0166FF;
+  text-decoration: none;
+}
+.head-cont .menu-cont li .hover[data-v-1aeaed3d] {
+  display: block;
+}
+.content-margin {
+  margin-top:100px;
+}

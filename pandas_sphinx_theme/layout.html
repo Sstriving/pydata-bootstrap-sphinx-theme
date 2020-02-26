@@ -39,6 +39,9 @@
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 {%- endblock %}
 {%- block content %}
+    <div class="head-cont" id='head-cont' data-v-1aeaed3d="">
+      {%- include "header.html" %}
+    </div>
     <div class="bd-search">
       {%- include "docs-search.html" %}
     </div>
@@ -46,7 +49,7 @@
       {%- include "docs-navbar.html" %}
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="content-text">
       <div class="row flex-xl-nowrap">
           <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
               {%- include "docs-sidebar.html" %}
