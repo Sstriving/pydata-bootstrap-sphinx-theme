@@ -624,3 +624,105 @@ code {
 .content-margin {
   margin-top:100px;
 }
+
+
+
+/* footer */
+
+.foot-cont[data-v-74ec34cb] {
+  min-width: 1280px;
+  height: 424px;
+  background: #F7F9FC;
+
+}
+.foot-cont ul, ol {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.inner-cont[data-v-74ec34cb] {
+  margin: 0 auto;
+  width: 1280px;
+  padding: 100px 100px 0 100px;
+}
+
+.inner-cont .left[data-v-74ec34cb] {
+  float: left;
+}
+
+.inner-cont .left h2[data-v-74ec34cb] {
+  cursor: default;
+  height: 28px;
+  line-height: 28px;
+  font-size: 28px;
+  color: #19284D;
+  font-weight: bold;
+  height: unset;
+}
+.inner-cont .icon[data-v-74ec34cb] {
+  margin-top: 87px;
+  height: 36px;
+}
+
+.inner-cont .left p[data-v-74ec34cb] {
+  color: #7F889C;
+  font-size: 12px;
+  line-height: 17px;
+  height: 17px;
+  font-weight: 400;
+  margin-top: 23px;
+}
+.inner-cont .left p[data-v-74ec34cb]:last-child {
+  margin-top: 16px;
+}
+.inner-cont .icon .qq[data-v-74ec34cb] {
+  background-image: url(/_nuxt/assets/images/qq.svg);
+}
+.inner-cont .icon li[data-v-74ec34cb] {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  float: left;
+  margin-right: 22px;
+}
+.inner-cont .icon .wechat[data-v-74ec34cb] {
+  background-image: url(/_nuxt/assets/images/wechat.svg);
+}
+.inner-cont .icon .code-cont[data-v-74ec34cb] {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  top: -140px;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+  width: 130px;
+  height: 130px;
+  box-shadow: 0px -2px 11px 0px rgba(233, 237, 248, 0.73);
+}
+
+.inner-cont .right[data-v-74ec34cb] {
+  float: right;
+}
+.inner-cont .list-item[data-v-74ec34cb] {
+  float: left;
+  margin-left: 80px;
+}
+.inner-cont .list-item h2[data-v-74ec34cb] {
+  cursor: default;
+  height: unset;
+  font-size: 16px;
+  font-weight: 500;
+  color: #19284d;
+  line-height: 22px;
+  margin:0 0 32px 0 !important;
+}
+.inner-cont .list-item a[data-v-74ec34cb] {
+  margin-top: 16px;
+  display: block;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4c5875;
+  line-height: 20px;
+}
