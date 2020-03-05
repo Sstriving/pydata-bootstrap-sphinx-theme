@@ -43,6 +43,10 @@
           document.addEventListener('keydown', initPageNav)
           keyboardListener = true;
       }
+      $("#bd-toc-nav .nav-item").click(function() {
+        $("#bd-toc-nav .nav-item.active").removeClass("active");
+        $(this).addClass("active");
+      })
       const navbarDom = document.getElementById('navbar-main');
       const headerDom = document.getElementById('head-cont');
       const megviiLogoDom = document.getElementById('megvii-logo');
