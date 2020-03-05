@@ -97,7 +97,7 @@
         let versions = JSON.parse(data);
         versions.forEach((val) => {
           let option = '';
-          if (val.match('.js')) {
+          if (val.match('.js') || val.match('.txt')) {
             return
           }
           if (val === 'latest') {
@@ -110,5 +110,8 @@
       }
     });
 
+    $('#version-select').on('change', function () {
+      location.href = `http://${location.host}/doc/${this.value}`;
+    });
   });
 </script>
