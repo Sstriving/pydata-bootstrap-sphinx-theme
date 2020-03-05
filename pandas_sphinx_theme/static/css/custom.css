@@ -58,6 +58,7 @@ height: 96px !important;
 display: block;
 border: 1px solid rgba(229,231,235,1);
 box-shadow: none;
+z-index:1001;
 }
 .bd-search {
   width: 100%;
@@ -124,7 +125,7 @@ top:63px;
   .bd-toc {
     position: -webkit-sticky;
     position: sticky;
-    top: 4rem;
+    top: 160px;
     height: calc(100vh - 4rem);
     overflow-y: auto;
   }
@@ -178,7 +179,7 @@ top:63px;
     .bd-sidebar {
       position: -webkit-sticky;
       position: sticky;
-      top: 5rem;
+      top: 160px;
       z-index: 1000;
       height: calc(100vh - 4rem);
     }
@@ -716,6 +717,30 @@ code {
 .inner-cont .icon .qq[data-v-74ec34cb] {
   background-image: url(/_nuxt/assets/images/qq.svg);
 }
+.inner-cont .icon .qq[data-v-74ec34cb]:hover {
+  background-image: url(/_nuxt/assets/images/qq-bk.svg);
+}
+.inner-cont .icon .qq:hover .code-cont[data-v-74ec34cb] {
+  display: block;
+}
+
+.inner-cont .icon .code-img[data-v-74ec34cb] {
+  height: 110px;
+  background-size: cover;
+  background-image: url(/_nuxt/assets/images/qr-code.png);
+}
+
+.inner-cont .icon .triangle[data-v-74ec34cb] {
+  position: absolute;
+  bottom: -14px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
 .inner-cont .icon li[data-v-74ec34cb] {
   position: relative;
   width: 36px;
@@ -725,6 +750,12 @@ code {
 }
 .inner-cont .icon .wechat[data-v-74ec34cb] {
   background-image: url(/_nuxt/assets/images/wechat.svg);
+}
+.inner-cont .icon .wechat[data-v-74ec34cb]:hover {
+  background-image: url(/_nuxt/assets/images/wechat-bk.svg);
+}
+.inner-cont .icon .wechat:hover .code-cont[data-v-74ec34cb] {
+  display: block;
 }
 .inner-cont .icon .code-cont[data-v-74ec34cb] {
   display: none;
@@ -746,6 +777,11 @@ code {
   float: left;
   margin-left: 80px;
 }
+.inner-cont .list-item a[data-v-74ec34cb]:hover {
+  color: #0166ff;
+  font-weight: bold;
+  text-decoration: none;
+}
 .inner-cont .list-item h2[data-v-74ec34cb] {
   cursor: default;
   height: unset;
@@ -763,4 +799,14 @@ code {
   font-weight: 400;
   color: #4c5875;
   line-height: 20px;
+}
+
+
+/* 搜索页面 */
+#search-results {
+  padding-top:30px;
+}
+
+.search-summary {
+
 }
