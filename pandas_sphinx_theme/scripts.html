@@ -94,10 +94,12 @@
       }
     }, false)
 
+    let versionData;
     // 版本切换
     $.ajax({
       url: "/doc/version.json",
       success: function (data) {
+        versionData = data
         const {
           latest,
           versions
@@ -116,7 +118,8 @@
     })
 
     $('#version-select').on('change', function () {
-      location.href = `http://${location.host}/doc/${this.value}`;
+      let version = this.value === versionData.latest ?  'latest' : this.value
+      location.href = `http://${location.host}/doc/${version}`;
     });
 
   });
