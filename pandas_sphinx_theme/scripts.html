@@ -96,23 +96,24 @@
 
     // 版本切换
     $.ajax({
-      url: "/doc/version.txt",
+      url: "/doc/version.json",
       success: function (data) {
-        let versions = JSON.parse(data);
-        versions.forEach((val) => {
+        const {
+          latest,
+          versions
+        } = data
+        versions.forEach((item) => {
           let option = '';
-          if (val.match('.js') || val.match('.txt')) {
-            return
-          }
-          if (location.pathname.match(val)) {
-          option = `<option selected="selected" value="${val}">${val}</option>`
+          let pathname = location.pathname.match('latest') ? latest : location.pathname
+          if (pathname.match(item.path)) {
+            option = `<option selected="selected" value="${item.path}">${item.name}</option>`
           } else {
-          option = `<option value="${val}">${val}</option>`
+            option = `<option value="${item.path}">${item.name}</option>`
           }
           $('#version-select').append(option)
         })
       }
-    });
+    })
 
     $('#version-select').on('change', function () {
       location.href = `http://${location.host}/doc/${this.value}`;
