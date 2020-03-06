@@ -118,7 +118,7 @@
     })
 
     $('#version-select').on('change', function () {
-      $(this).width($('#version-select option:selected').width());
+      $(this).width($('select option:selected').width());
       let version = this.value === versionData.latest ?  'latest' : this.value
       location.href = `http://${location.host}/doc/${version}/index.html`;
     });
