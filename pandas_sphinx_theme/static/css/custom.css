@@ -619,11 +619,25 @@ code {
   color: #0166FF;
   border-bottom: 2px solid #0166FF;
 }
+
 .head-reverse-color .menu-cont .active[data-v-1aeaed3d] {
   color:#FFFFFF;
-  opacity: 1;
+  opacity: 0.7;
   border-bottom: 2px solid #FFFFFF;
 }
+
+.head-reverse-color .menu-cont li > a[data-v-1aeaed3d]:hover {
+  color: #FFFFFF !important;
+  cursor: pointer;
+  opacity: 1;
+}
+.head-reverse-color li .menu-drop .drop-list .url > a :hover {
+  color: rgba(1,102,255,1);
+  cursor: pointer;
+  opacity: 1;
+  border-bottom:none;
+}
+
 .head-cont .menu-cont li a[data-v-1aeaed3d] {
   padding: 0 2px;
   display: inline-block;
