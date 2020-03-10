@@ -571,7 +571,8 @@ a:hover {
   font-size: 16px;
 }
 
-.version-switch>select {
+.version-switch > select {
+  min-width: 48px;
   padding-right: 16px;
   height: 25px;
   font-size: 16px;
@@ -589,7 +590,7 @@ a:hover {
   background-position: right !important;
 }
 
-.version-switch>select option {
+.version-switch > select option {
   background: transparent;
   border: 0;
 }
