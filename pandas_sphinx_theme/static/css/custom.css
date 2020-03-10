@@ -881,11 +881,11 @@ ol {
 }
 
 .inner-cont .icon .qq[data-v-74ec34cb] {
-  background-image: url(/_nuxt/assets/img/qq.svg);
+  background-image: url(/img/qq.svg);
 }
 
 .inner-cont .icon .qq[data-v-74ec34cb]:hover {
-  background-image: url(/_nuxt/assets/img/qq-bk.svg);
+  background-image: url(/img/qq-bk.svg);
 }
 
 .inner-cont .icon .qq:hover .code-cont[data-v-74ec34cb] {
@@ -895,7 +895,7 @@ ol {
 .inner-cont .icon .code-img[data-v-74ec34cb] {
   height: 110px;
   background-size: cover;
-  background-image: url(/_nuxt/assets/img/qr-code.png);
+  background-image: url(/img/qr-code.png);
 }
 
 .inner-cont .icon .triangle[data-v-74ec34cb] {
@@ -918,11 +918,11 @@ ol {
 }
 
 .inner-cont .icon .wechat[data-v-74ec34cb] {
-  background-image: url(/_nuxt/assets/img/wechat.svg);
+  background-image: url(/img/wechat.svg);
 }
 
 .inner-cont .icon .wechat[data-v-74ec34cb]:hover {
-  background-image: url(/_nuxt/assets/img/wechat-bk.svg);
+  background-image: url(/img/wechat-bk.svg);
 }
 
 .inner-cont .icon .wechat:hover .code-cont[data-v-74ec34cb] {
