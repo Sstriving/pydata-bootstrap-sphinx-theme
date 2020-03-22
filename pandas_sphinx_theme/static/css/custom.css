@@ -931,6 +931,10 @@ ol {
   margin-top: 16px;
 }
 
+.inner-cont .left p a {
+  color: inherit;
+}
+
 .inner-cont .icon .qq[data-v-74ec34cb] {
   background-image: url(/img/qq.svg);
 }
@@ -946,7 +950,14 @@ ol {
 .inner-cont .icon .code-img[data-v-74ec34cb] {
   height: 110px;
   background-size: cover;
+}
+
+.inner-cont .icon .qq .code-img[data-v-74ec34cb] {
   background-image: url(/img/qr-code.png);
+}
+
+.inner-cont .icon .wechat .code-img[data-v-74ec34cb] {
+  background-image: url(/img/wechat-code.png);
 }
 
 .inner-cont .icon .triangle[data-v-74ec34cb] {
