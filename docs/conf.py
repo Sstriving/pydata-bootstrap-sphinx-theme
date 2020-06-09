@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Pandas Sphinx Theme for brain plus'
+project = 'Pandas Sphinx Theme'
 copyright = '2019, PyData Community'
 author = 'PyData Community'
 
@@ -54,7 +54,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'pandas_sphinx_theme_brain_plus'
+html_theme = 'pandas_sphinx_theme'
 html_logo = '_static/pandas.svg'
 
 html_theme_options = {
@@ -70,7 +70,7 @@ html_theme_options = {
 }
 
 html_context = {
-    "github_user": "brain-dev",
+    "github_user": "pandas-dev",
     "github_repo": "pandas-sphinx-theme",
     "github_version": "master",
     "doc_path": "docs",

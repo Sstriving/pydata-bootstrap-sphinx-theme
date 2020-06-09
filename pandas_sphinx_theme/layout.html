@@ -12,11 +12,13 @@
 {% endmacro %}
 
 {%- block css %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
 
     {{- css() }}
+    <link href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" rel="stylesheet">
     <link href="{{ pathto('_static/css/custom.css', 1) }}" rel="stylesheet">
+
 {%- endblock %}
 
 {%- block extrahead %}
@@ -38,31 +40,36 @@
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 {%- endblock %}
 {%- block content %}
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+    <div class="head-cont" id='head-cont' data-v-1aeaed3d="">
+      {%- include "header.html" %}
+    </div>
+    <div class="bd-search">
+      {%- include "docs-search.html" %}
+    </div>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light bd-navbar" id="navbar-main">
       {%- include "docs-navbar.html" %}
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="content-text">
       <div class="row flex-xl-nowrap">
           <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
               {%- include "docs-sidebar.html" %}
           </div>
 
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
+          <div class="d-none d-xl-block bd-toc">
               {% if not (meta is not none and 'notoc' in meta) %}
                 {%- include "docs-toc.html" %}
               {% endif %}
             </div>
 
           <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <a href="#top" style="display: none;" title="永久链接至标题">¶</a>
               <div>
                 {% block body %} {% endblock %}
               </div>
-              {% if theme_show_prev_next %}
               <div class='prev-next-bottom'>
-                {{ prev_next(prev, next) }}
+                <a class='right-next back-top' id="next-link" href="#top" title="next page">返回到顶部</a>
               </div>
-              {% endif %}
           </main>
 
       </div>

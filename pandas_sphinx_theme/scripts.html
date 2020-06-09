@@ -1,47 +1,123 @@
 <script>
-    // TOC sidebar - add "active" class to parent list
-    //
-    // Bootstrap's scrollspy adds the active class to the <a> link,
-    // but for the automatic collapsing we need this on the parent list item.
-    //
-    // The event is triggered on "window" (and not the nav item as documented),
-    // see https://github.com/twbs/bootstrap/issues/20086
-    $(window).on("activate.bs.scrollspy", function(){
+  // TOC sidebar - add "active" class to parent list
+  //
+  // Bootstrap's scrollspy adds the active class to the <a> link,
+  // but for the automatic collapsing we need this on the parent list item.
+  //
+  // The event is triggered on "window" (and not the nav item as documented),
+  // see https://github.com/twbs/bootstrap/issues/20086
+  $(window).on("activate.bs.scrollspy", function () {
     var navLinks = document.querySelectorAll('#bd-toc-nav a');
     for (var i = 0; i < navLinks.length; i++) {
-        var navLink = navLinks[i];
-        navLink.parentElement.classList.remove('active');
+      var navLink = navLinks[i];
+      navLink.parentElement.classList.remove('active');
     }
     var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
     for (var i = 0; i < navLinks.length; i++) {
-        var navLink = navLinks[i];
-        navLink.parentElement.classList.add('active');
+      var navLink = navLinks[i];
+      navLink.parentElement.classList.add('active');
     }
+  });
+
+  /**
+   * Use left and right arrow keys to navigate forward and backwards.
+   */
+  const LEFT_ARROW_KEYCODE = 37
+  const RIGHT_ARROW_KEYCODE = 39
+
+  const getPrevUrl = () => document.getElementById('prev-link').href
+  const getNextUrl = () => document.getElementById('next-link').href
+  const initPageNav = (event) => {
+    const keycode = event.which
+
+    if (keycode === LEFT_ARROW_KEYCODE) {
+      window.location.href = getPrevUrl();
+    } else if (keycode === RIGHT_ARROW_KEYCODE) {
+      window.location.href = getNextUrl();
+    }
+  };
+
+  var keyboardListener = false;
+  $(document).ready(() => {
+    if (keyboardListener === false) {
+      document.addEventListener('keydown', initPageNav)
+      keyboardListener = true;
+    }
+    $("#bd-toc-nav .nav-item").click(function () {
+      $("#bd-toc-nav .nav-item.active").removeClass("active");
+      $(this).addClass("active");
+    })
+    const navbarDom = document.getElementById('navbar-main');
+    const headerDom = document.getElementById('head-cont');
+    const megviiLogoDom = document.getElementById('megvii-logo');
+    const contentTextDom = document.getElementById('content-text');
+    const midLineDom = document.getElementsByClassName('mid-line')[0];
+    const bdSearch = document.getElementsByClassName('bd-search')[0];
+    const backTopDom = document.getElementsByClassName('back-top')[0];
+    document.addEventListener('scroll', () => {
+      const scrollTopNum = document.documentElement.scrollTop
+      // 整体导航栏固定
+      if (scrollTopNum >= headerDom.clientHeight) {
+        bdSearch.classList.add('bd-search-margin-top');
+        headerDom.classList.add('head-reverse-color');
+        midLineDom.classList.add('mid-line-scroll');
+        megviiLogoDom.setAttribute('src', '/img/logo-scroll.png')
+
+      } else {
+        bdSearch.classList.remove('bd-search-margin-top');
+        midLineDom.classList.remove('mid-line-scroll');
+
+        headerDom.classList.remove('head-reverse-color');
+        megviiLogoDom.setAttribute('src', '/img/logo.png')
+      }
+      // 文档导航栏固定
+      if (scrollTopNum >= bdSearch.clientHeight) {
+        navbarDom.classList.add('fixed-top');
+        contentTextDom.classList.add('content-margin');
+      } else {
+        if (Array.from(navbarDom.classList).includes('fixed-top')) {
+          navbarDom.classList.remove('fixed-top');
+          contentTextDom.classList.remove('content-margin');
+        }
+      }
+      // 返回顶部按钮监听
+      if (scrollTopNum >= document.documentElement.clientHeight && scrollTopNum < contentTextDom.clientHeight -
+        280) {
+        backTopDom.classList.add('back-top-show');
+      } else {
+        backTopDom.classList.remove('back-top-show');
+
+      }
+    }, false)
+
+    let versionData;
+    // 版本切换
+    $.ajax({
+      url: "/doc/version.json",
+      success: function (data) {
+        versionData = data
+        const {
+          latest,
+          versions
+        } = data
+        versions.forEach((item) => {
+          let option = '';
+          let pathname = location.pathname.match('latest') ? latest : location.pathname
+          if (pathname.match(item.path)) {
+            option = `<option selected="selected" value="${item.path}">${item.name}</option>`
+          } else {
+            option = `<option value="${item.path}">${item.name}</option>`
+          }
+          $('#version-select').append(option)
+        })
+      }
+    })
+
+    $('#version-select').on('change', function () {
+      $(this).width($('select option:selected').width());
+      let version = this.value === versionData.latest ? 'latest' : this.value
+      location.href = `http://${location.host}/doc/${version}/index.html`;
     });
 
-    /**
-     * Use left and right arrow keys to navigate forward and backwards.
-    */
-    const LEFT_ARROW_KEYCODE = 37
-    const RIGHT_ARROW_KEYCODE = 39
-
-    const getPrevUrl = () => document.getElementById('prev-link').href
-    const getNextUrl = () => document.getElementById('next-link').href
-    const initPageNav = (event) => {
-        const keycode = event.which
-
-        if (keycode === LEFT_ARROW_KEYCODE) {
-            window.location.href = getPrevUrl();
-        } else if (keycode === RIGHT_ARROW_KEYCODE) {
-            window.location.href = getNextUrl();
-        }
-    };
-
-    var keyboardListener = false;
-    $( document ).ready(() => {
-        if (keyboardListener === false) {
-            document.addEventListener('keydown', initPageNav)
-            keyboardListener = true;
-        }
-    });
+  });
 </script>
